@@ -484,6 +484,10 @@ if __name__ == "__main__":
             transId = records.get(title).get("genRecordId")
             cover = episode.get("cover").get("external").get("url")
             children.append(utils.get_heading(2, "音频"))
+            print(f"audio_url = {audio_url}")
+            print(f"title = {title}")
+            print(f"cover = {cover}")
+            print(f"podcast_title = {podcast_title}")
             player_url = f"https://notion-music.malinkang.com/player?url={urllib.parse.quote(audio_url)}&name={urllib.parse.quote(title)}&cover={urllib.parse.quote(cover)}&artist={urllib.parse.quote(podcast_title)}"
             children.append({"type": "embed", "embed": {"url": player_url}})
             print(f"开始获取《{title}》的数据")
